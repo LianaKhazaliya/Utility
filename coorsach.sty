@@ -1,0 +1,136 @@
+%% STY: Необходимые пакеты
+\RequirePackage{amsmath,amsfonts,amssymb,amsthm}
+\RequirePackage{fancyhdr,indentfirst,ulem,euscript} 
+\RequirePackage{graphicx,color,xcolor,wrapfig}
+\RequirePackage[matrix,arrow,curve]{xy}
+\RequirePackage[utf8x]{inputenc}
+\RequirePackage[russian]{babel}
+\RequirePackage{hyperref,titletoc,tocloft}
+
+
+%% STY: Отступы страницы
+\textheight=250mm
+\hoffset=6.6mm
+\voffset=-1cm
+\headheight=13pt
+\headsep=0.65cm
+\textwidth=146mm
+\oddsidemargin=0mm
+\evensidemargin=0mm
+\topmargin=0mm
+
+
+%% STY: Особенности нашего документа
+\frenchspacing
+\def\scolon{\rlap{,}\raisebox{0.8ex}{,} }
+\def\vsection{\vspace{0.8cm}\section}
+\renewcommand{\labelenumi}{\theenumi)}
+\renewcommand{\thesubsection}{}
+\renewcommand{\cftdot}{}
+
+
+%% STY: Колонтитулы
+\pagestyle{fancy}
+\fancyfoot{}
+\fancyhead[LO,LE]{\raisebox{4pt}{--\ \, November, 2019\,\ --}}
+\fancyhead[RO,RE]{\raisebox{4pt}{--\ \,\thepage\,\ --}}
+\fancyhead[CO,CE]{\raisebox{4pt}
+	{\footnotesize{\qquad
+		Utility on graphs with pictures))0)}}}
+
+
+%% STY: Первая страница
+\fancypagestyle{firstst}{
+	\fancyhead{}
+	\renewcommand{\headrulewidth}{0.0mm}}
+
+
+%%%%%%%%%%%%%%%
+
+
+%% DEF: Окружения–теоремы
+\newtheorem{algom}{Алгоритм}
+\newtheorem{exmpl}{Пример}
+\newtheorem{stat}{Теорема}
+\def\newthm#1#2{
+	\begin{stat}
+	\label{#1} #2
+	\end{stat}}
+\newtheorem{lem}{Лемма}
+\def\newlem#1#2{
+	\begin{lem}
+	\label{#1} #2
+	\end{lem}}
+
+
+%% DEF: Разделы без номеров
+\renewcommand{\@seccntformat}[1]
+	{\ifcsname prefix@#1\endcsname
+	   \csname prefix@#1\endcsname
+	 \else
+	 \csname the#1\endcsname\quad
+	\fi}
+\newcommand\prefix@section{}
+
+
+%% DEF: Url в начале раздела
+\def\parhref#1{
+	\begin{center}
+	\begin{tabular}{|l|}
+		\hline
+		\begin{minipage}[c]{12.5cm}
+			{\noindent{\small\tt #1}}
+		\end{minipage} \\
+		\hline
+	\end{tabular}
+	\end{center}}
+
+
+%%%%%%%%%%%%%%%
+
+
+%% DEF: Отступы вертикальные и горизонтальные
+\def\newstr{\par\noindent}
+\def\ms{\medskip\newstr}
+\def\abz{\medskip\par}
+\def\excl{\!\!\!\!\!\!}
+
+
+%% DEF: Шрифт \mathbb
+\def\N{\mathbb N} \def\Z{\mathbb Z}
+\def\Q{\mathbb Q} \def\R{\mathbb R}
+\def\C{\mathbb C} \def\F{\mathbb F}
+\def\Id{\mathbb I \mathrm d}
+
+
+%% DEF: Скобки
+\def\lr{\left(} \def\rr{\right)}
+\def\lf{\left\lfloor} \def\rf{\right\rfloor}
+\def\ld{\left|} \def\rd{\right|}
+\def\lag{\langle} \def\rag{\rangle}
+
+
+%% DEF: Операторы
+%def\gcd{\mbox{НОД}\,}
+\def\s#1{\sqrt{#1}} \def\ovl{\overline}
+\def\lth{\mathrm{length}\ }
+
+
+%% DEF: Стрелки
+\def\ra{\longrightarrow}
+\def\rar{\rightarrow}
+
+
+%% DEF: Разноуровневое
+\def\fact#1#2{\raisebox{.2em}{$#1$}\! \left/
+  \vphantom{\raisebox{.2em}{$#1$}}
+  \!\raisebox{-.2em}{$#2$} \right.}
+\def\x{[\raisebox{0.05em}{\footnotesize\!$[$} x \raisebox{0.05em}{\footnotesize$]$\!}]}
+
+
+%% DEF: Буквы
+\def\ve{\varepsilon}
+\def\vfi{\varphi}
+\def\clasr{\EuScript R}
+\def\fib{\EuScript F}
+\def\vt{\vartheta}
