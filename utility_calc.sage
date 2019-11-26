@@ -77,10 +77,8 @@ def get_all(input_file, output_file):
 		with open(input_file, mode='r') as g6file, open(output_file, mode='w') as texfile:
 			get_data(g6file, texfile)
 
-
 def open_files(input_file, output_file):
 	assert (input_file.split('.')[-1] == 'g6' and output_file.split('.')[-1] == 'tex')
-
 
 def set_tex_opt(graph):
 	graph.set_latex_options(
@@ -102,7 +100,6 @@ def write_to_tex2(graph, utility, texfile, k):
 def generate_tex(output_file):
 	pass
 
-
 def compile_tex():
 	os.system('cd code')
 	os.system('pdflatex data.tex')
@@ -112,5 +109,5 @@ if __name__ == '__main__':
 	args = get_args()
 	get_all(args.input_file, args.output_file)
 	print('Compile data.tex file and enjoy result obtained')
-	compile_tex()
+	#compile_tex()
 	#get_all('./code/graph5.g6', './code/table.tex')
